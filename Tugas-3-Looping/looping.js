@@ -26,3 +26,43 @@ for(let i = 1; i <= 20; i ++) {
     console.log(i + " - Santai");
   }
 }
+
+console.log("----------------------------");
+// soal no 3
+var result ="" ;
+for(let i = 0; i < 4; i ++) {
+  for(let j = 0; j < 8; j ++) {
+    result += "#";
+  }
+  result += "\n";
+}
+console.log(result);
+
+// soal no 4
+console.log("----------------------------");
+
+var result = "";
+for(let i = 0; i <= 7; i ++) {
+  for(let j = 0; j < i; j ++) {
+    result += "#";
+  }
+  result += "\n";
+}
+
+console.log(result);
+
+// soal no 5
+console.log("----------------------------");
+var result = "";
+for(let i = 0; i < 8; i ++) {
+  for(let j = 0; j < 8; j ++) {
+    if ((i+j) % 2 === 0) {
+      result += " ";
+    } else {
+      result += "#";
+    }
+  }
+  result += "\n";
+}
+
+console.log(result);
