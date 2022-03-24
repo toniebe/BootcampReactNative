@@ -1,8 +1,17 @@
 import { Image, StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useContext } from "react";
 import { AntDesign, FontAwesome, Ionicons } from "@expo/vector-icons";
+import { UserContext } from "../Tugas14/Context/UserProvider";
+import Button from "../components/Button";
 
-export default function About() {
+export default function About({navigation}) {
+  const { email, setEmail, setPassword, setIsSigned } = useContext(UserContext);
+
+  const handleLogout = () => {
+    setEmail("");
+    setPassword("");
+    setIsSigned(false)
+  }
   return (
     <View style={styles.container}>
       <View style={styles.title}>
@@ -14,9 +23,7 @@ export default function About() {
           style={styles.profile}
         />
         <View style={styles.name}>
-          <Text style={{ color: "#78BC61", fontSize: 24 }}>
-            Ahmad Fathoni Zumaro
-          </Text>
+          <Text style={{ color: "#78BC61", fontSize: 24 }}>{email}</Text>
           <Text style={{ color: "#C0C781", fontSize: 14 }}>
             React Native Developer
           </Text>
@@ -48,13 +55,21 @@ export default function About() {
           <Text style={{ marginLeft: 10 }}>082320043994</Text>
         </View>
         <View style={styles.media}>
-        <AntDesign name="linkedin-square" size={24} color="black" />
+          <AntDesign name="linkedin-square" size={24} color="black" />
           <Text style={{ marginLeft: 10 }}>Ahmad Fathoni Zumaro</Text>
         </View>
         <View style={styles.media}>
           <Ionicons name="mail" size={24} color="black" />
           <Text style={{ marginLeft: 10 }}>ahmadfathonizumaro@gmail.com</Text>
         </View>
+      </View>
+      <View>
+        <Button
+          bgColor={"#78BC61"}
+          text={"Logout"}
+          textColor={"white"}
+          onPress={() => handleLogout()}
+        />
       </View>
     </View>
   );

@@ -6,6 +6,7 @@ import About from './Tugas11/About';
 import Login from './Tugas11/Login';
 import Register from './Tugas11/Register';
 import Tugas13 from './Tugas13';
+import Tugas14 from './Tugas14';
 
 export default function App() {
   return (
@@ -15,7 +16,8 @@ export default function App() {
     {/* <Register /> */}
     {/* <About /> */}
     {/* <Movie /> */}
-    <Tugas13 />
+    {/* <Tugas13 /> */}
+    <Tugas14 />
     </>
   );
 }

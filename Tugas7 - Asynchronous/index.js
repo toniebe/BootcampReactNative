@@ -20,23 +20,4 @@ function read(time, books, i) {
 
 read(10000, books, 0);
 
-const readBooksPromise = require('./promise.js')
- 
-var panjang = books.length;
-var waktu = 10000;
 
-function execute(waktu, index, panjang) {
-  readBooksPromise(waktu, books[index])
-    .then(function (sisaWaktu) {
-      waktu = sisaWaktu;
-      panjang = panjang - 1;
-      if (panjang > 0) {
-        execute(waktu, index + 1, panjang);
-      }
-    })
-    .catch(function (err) {
-      console.log(err);
-    });
-}
-
-execute(waktu, 0, panjang);
