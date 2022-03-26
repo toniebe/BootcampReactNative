@@ -12,10 +12,10 @@ export default function Home({route, navigation}) {
       };
 
     const updateHarga =(price)=>{
-        // console.log("UpdatPrice : " + price);
-        // const temp = Number(price) + totalPrice;
-        // console.log(temp)
-        // setTotalPrice(temp)
+        console.log("UpdatPrice : " + price);
+        const temp = Number(price) + totalPrice;
+        console.log(temp)
+        setTotalPrice(temp)
         
         //? #Bonus (10 poin) -- HomeScreen.js --
         //? agar harga dapat update misal di tambah lebih dari 1 item atau lebih -->
@@ -39,9 +39,9 @@ export default function Home({route, navigation}) {
                 keyExtractor={(item, index) => `${index}`}
                 renderItem={({item})=> {
                     return(
-                        <TouchableOpacity>
-                            <Card image={item.image} title={item.title} type={item.type} harga={item.harga} description={item.desc} />
-                        </TouchableOpacity>
+                       
+                            <Card image={item.image} title={item.title} type={item.type} harga={item.harga} description={item.desc} onPress={() => updateHarga(item.harga)} />
+                      
 
                     )
                 }}

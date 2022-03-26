@@ -1,7 +1,7 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Button, Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-export default function Card({image,title,type,harga,description}) {
+export default function Card({image,title,type,harga,description,onPress}) {
   return (
     <View style={{flex:1, borderWidth:1,borderColor:'#e4e4e4',marginBottom:10}}>
       <View style={styles.top}>
@@ -14,6 +14,7 @@ export default function Card({image,title,type,harga,description}) {
       </View>
       <View style={{maxWidth: 300,paddingHorizontal:10}}>
         <Text >{description}</Text>
+        <Button title="Beli" onPress={onPress} />
       </View>
     </View>
   )
